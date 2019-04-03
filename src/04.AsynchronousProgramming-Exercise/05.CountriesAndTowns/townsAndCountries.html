@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        #results {
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        #results tr {
+            background-color: #AAAAAA;
+            padding: 5vh;
+            font-size: 1.5vw;
+        }
+        #results tr:nth-child(odd) {
+            background-color: #808080;
+        }
+        #results tr:first-child {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 2vw;
+        }
+        #results tr th {
+            padding: 1vw;
+        }
+        #results tr td {
+            padding: 1vw;
+            transition: font-size 0.2s;
+        }
+        #results tr:not(:first-child):hover {
+            background-color: #F0F8FF;
+            color: #000000;
+            font-size: 2.25vw;
+        }
+        #loadBtn-container {
+            width: 280px;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #sort-towns {
+            width: 280px;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #sort-towns input {
+            width: 100px;
+        }
+        #form {
+            width: 280px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid green;
+        }
+        #form label {
+            display: inline-block;
+            width: 100px;
+        }
+        #form div {
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+<form id="country-form">
+    <label for="country">Country</label>
+    <input id="country" type="text">
+    <div>
+        <button id="add-country-Btn" onclick="addCountry()" type="button">Add Country</button>
+    </div>
+
+</form>
+<form id="town-form">
+    <label for="town">Town</label>
+    <input id="town" type="text">
+    <label for="town-country">Town Country</label>
+    <input id="town-country" type="text">
+    <div>
+        <button id="add-town-Btn" onclick="addTown()" type="button">Add Town</button>
+    </div>
+
+</form>
+<div id="loadBtn-container">
+    <button id="loadBtn" onclick="listCountries()">List Countries</button>
+    <button id="town-loadBtn" onclick="listTowns()">List Towns</button>
+
+</div>
+<div id="sort-towns">
+    <label for="country-sort">Country</label>
+    <input id="country-sort" type="text">
+    <button id="list-by-country" onclick="listTownsByCountry()">List Towns by country</button>
+</div>
+<table id="results">
+    <tr>
+        <th>Country</th>
+        <th>Country Actions</th>
+        <th>Town</th>
+        <th>Town Actions</th>
+    </tr>
+</table>
+<script src="script.js">
+</script>
+</body>
+</html>
